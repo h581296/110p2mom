@@ -51,12 +51,7 @@ public class Storage {
 	}
 
 	public void addClientSession(String user, Connection connection) {
-
-		// TODO: add corresponding client session to the storage
-		// See ClientSession class
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
+		clients.put(user, new ClientSession(user, connection));
 	}
 
 	public void removeClientSession(String user) {
