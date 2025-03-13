@@ -25,10 +25,16 @@ public class DisplayDevice {
 		// - disconnect from the broker
 		
 		// TODO - END
-		
+
+		Client client = new Client("display", "localhost", 8080);
+		client.connect();
+		client.createTopic("temperature");
+		client.subscribe("temperature");
+		client.receive();
+
+		client.unsubscribe("temperature");
+		client.disconnect();
+
 		System.out.println("Display stopping ... ");
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
 	}
 }
